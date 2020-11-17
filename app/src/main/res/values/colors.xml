@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="brown_eyes">#492501</color>
+    <color name="blue_eyes">#2626C3</color>
+    <color name="green_eyes">#006500</color>
+    <color name="active_item">#FFFFFF</color>
+    <color name="not_active_item">#7EDFDEDE</color>
+</resources>

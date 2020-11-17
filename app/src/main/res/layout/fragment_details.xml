@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.example.testtaskusers.model.UserModel" />
+
+        <import type="com.example.testtaskusers.view.Converter" />
+
+        <import type="androidx.core.content.ContextCompat" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.DetailsFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/name" />
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{user.name}"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:text="Kuznetsova Svetlana" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/age" />
+
+            <TextView
+                android:id="@+id/user_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{user.age}"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="21" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/company" />
+
+            <TextView
+                android:id="@+id/user_company"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{user.company}"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="OOO Test" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/email" />
+
+            <TextView
+                android:id="@+id/user_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="email"
+                android:linksClickable="true"
+                android:text="@{user.email}"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="bradytyler@pyramax.com" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/phone" />
+
+            <TextView
+                android:id="@+id/user_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="phone"
+                android:linksClickable="true"
+                android:text="@{user.phone}"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="+79376522103" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/address" />
+
+            <TextView
+                android:id="@+id/user_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{user.address}"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="892 Brooklyn Avenue, Cloverdale, Oklahoma, 2475" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/about" />
+
+            <TextView
+                android:id="@+id/user_about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{user.about}"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="Eu nisi cillum incididunt et sint adipisicing laboris proident nulla tempor adipisicing veniam cillum. Aliquip nisi incididunt ea reprehenderit amet id occaecat veniam fugiat eu pariatur ullamco incididunt. Tempor aliquip tempor magna culpa esse sint adipisicing officia labore enim" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/eye_color" />
+
+            <ImageView
+                android:id="@+id/user_eye_color"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/eye_color"
+                android:tint="@{ContextCompat.getColor(context, Converter.getEyesColor(user.eyeColor))}"
+                app:srcCompat="@drawable/circle_image_view"
+                tools:ignore="UseAppTint" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/favorite_fruit" />
+
+            <ImageView
+                android:id="@+id/favorite_fruit"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/favorite_fruit"
+                android:src="@{ContextCompat.getDrawable(context, Converter.getFruitImage(user.favoriteFruit))}"
+                tools:src="@drawable/banana" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/registered" />
+
+            <TextView
+                android:id="@+id/user_registered"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{Converter.formatDate(user.registered)}"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="01.03.1996" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/coordinates" />
+
+            <TextView
+                android:id="@+id/user_coordinates"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:linksClickable="true"
+                android:textColor="@color/colorAccent"
+                android:text='@{user.latitude + ", " + user.longitude}'
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="-71.057353,-71.057353" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/friends" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/friends_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="vertical"
+                    tools:listitem="@layout/user_item" />
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+</layout>
